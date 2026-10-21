@@ -252,17 +252,6 @@
     .form-hint { font-size: 11px; color: #898c96; margin: 14px 0 0; line-height: 1.4; }
     .form-status { display: none; margin-top: 16px; padding: 12px; border-radius: var(--radius); background: rgba(65, 105, 255, 0.1); border: 1px solid var(--blue); color: #d0d8ff; font-size: 13px; }
 
-    /* Configuration Banner */
-    .config-banner {
-      background: #151922;
-      border-bottom: 1px solid #303545;
-      padding: 10px 0;
-      font-size: 12px;
-      color: #b0b4c0;
-    }
-    .config-banner-inner { display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-    .config-banner input { margin: 0; padding: 6px 10px; font-size: 12px; width: 180px; }
-
     /* FAQ */
     .faq { border-top: 1px solid var(--line); margin-top: 30px; }
     details { border-bottom: 1px solid var(--line); padding: 20px 0; }
@@ -334,17 +323,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Live Configuration Toolbar for Testing -->
-  <div class="config-banner" id="configBanner">
-    <div class="wrap config-banner-inner">
-      <span><strong>WhatsApp Setup:</strong> Enter your number (with country code, no + or spaces) to test instant messaging:</span>
-      <div style="display:flex; gap:8px; align-items:center;">
-        <input type="text" id="configPhoneInput" value="923144330830" placeholder="e.g. 923001234567">
-        <button class="btn btn-blue" id="saveConfigBtn" style="padding:6px 12px; font-size:11px;">Update</button>
-      </div>
-    </div>
-  </div>
 
   <div class="topline"></div>
 
@@ -489,7 +467,7 @@
           
           <div class="contact-method">
             <small>Direct WhatsApp</small>
-            <a id="whatsappText" href="#contact">Loading contact info...</a>
+            <a id="whatsappText" href="https://wa.me/923144330830" target="_blank" rel="noopener noreferrer">+923144330830</a>
           </div>
           
           <div class="contact-method">
@@ -573,45 +551,15 @@
     </div>
   </footer>
 
-  <a class="wa-float" id="floatWhatsApp" href="#contact" aria-label="Contact on WhatsApp">WHATSAPP ↗</a>
+  <a class="wa-float" id="floatWhatsApp" href="https://wa.me/923144330830?text=Assalam-o-Alaikum%20Baqir%2C%20I%27d%20like%20to%20ask%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">WHATSAPP ↗</a>
 
   <script>
-    let WHATSAPP_NUMBER = "923144330830";
-
-    const waText = document.getElementById("whatsappText");
-    const floatWa = document.getElementById("floatWhatsApp");
-    const configInput = document.getElementById("configPhoneInput");
-    const saveConfigBtn = document.getElementById("saveConfigBtn");
-
-    function updateWhatsAppLinks(number) {
-      const cleanNum = number.replace(/[^\d]/g, "");
-      const isValid = /^\d{10,15}$/.test(cleanNum);
-
-      if (isValid) {
-        WHATSAPP_NUMBER = cleanNum;
-        waText.textContent = "+" + WHATSAPP_NUMBER;
-        waText.href = "https://wa.me/" + WHATSAPP_NUMBER;
-        floatWa.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Assalam-o-Alaikum Baqir, I'd like to ask about your services.");
-      } else {
-        waText.textContent = "Please configure a valid WhatsApp number";
-        waText.href = "#contact";
-        floatWa.href = "#contact";
-      }
-    }
-
-    // Initialize links
-    updateWhatsAppLinks(WHATSAPP_NUMBER);
-
-    // Live config banner handler
-    saveConfigBtn.addEventListener("click", () => {
-      updateWhatsAppLinks(configInput.value);
-      alert("WhatsApp contact number updated to: +" + WHATSAPP_NUMBER);
-    });
+    const WHATSAPP_NUMBER = "923144330830";
 
     // Auto update copyright year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Auto-select dropdown service when clicking CTA buttons
+    // Auto-select dropdown service when clicking service CTA buttons
     document.querySelectorAll("[data-service]").forEach(link => {
       link.addEventListener("click", () => {
         const service = link.getAttribute("data-service");
@@ -629,12 +577,6 @@
       const service = document.getElementById("service").value;
       const message = document.getElementById("message").value.trim();
       const status = document.getElementById("formStatus");
-
-      if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
-        status.style.display = "block";
-        status.textContent = "Please enter a valid WhatsApp phone number in the top configuration bar before submitting.";
-        return;
-      }
 
       const formattedText = `Assalam-o-Alaikum Baqir Ali Abbasi!\n\n` +
         `• Name: ${name}\n` +
