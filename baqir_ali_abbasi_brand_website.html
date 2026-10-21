@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0c">
+  <meta name="description" content="Baqir Ali Abbasi — Professional CV writing, cover letters, scholarship application support, and academic document guidance.">
+  <title>Baqir Ali Abbasi — Personal Advisory & Academic Services</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090a0c;
+      --panel: #111317;
+      --panel-hover: #161920;
+      --text: #f5f5f2;
+      --muted: #a5a7ad;
+      --line: rgba(255, 255, 255, 0.12);
+      --blue: #4169ff;
+      --blue-hover: #3154e6;
+      --blue-glow: rgba(65, 105, 255, 0.25);
+      --white: #ffffff;
+      --max: 1180px;
+      --radius: 4px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .topline { height: 3px; background: linear-gradient(90deg, #fff 0%, #9baeff 45%, var(--blue) 100%); }
+
+    /* Header & Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(9, 10, 12, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .13em; }
+    .monogram {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,0.25);
+      display: grid;
+      place-items: center;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      letter-spacing: -.08em;
+      background: rgba(255,255,255,0.03);
+      transition: border-color .2s;
+    }
+    .brand:hover .monogram { border-color: var(--blue); }
+    .navlinks { display: flex; gap: 28px; align-items: center; color: #d5d6da; font-size: 13px; font-weight: 500; }
+    .navlinks a { transition: color .2s; }
+    .navlinks a:hover { color: #9baeff; }
+
+    /* Buttons */
+    .nav-cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid var(--text);
+      padding: 12px 20px;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .06em;
+      transition: all .2s ease;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text);
+      border-radius: var(--radius);
+    }
+    .nav-cta:hover, .btn-light:hover { background: var(--white); color: #090a0c; transform: translateY(-1px); }
+    .btn-blue { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .btn-blue:hover { background: var(--blue-hover); border-color: var(--blue-hover); transform: translateY(-1px); box-shadow: 0 4px 20px var(--blue-glow); }
+
+    /* Hero Section */
+    .hero {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 50px;
+      padding-block: 80px 90px;
+      position: relative;
+    }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #aab7ff;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--blue); }
+    h1 {
+      font-size: clamp(48px, 6.8vw, 88px);
+      line-height: .95;
+      letter-spacing: -.05em;
+      margin: 22px 0 24px;
+      font-weight: 800;
+      max-width: 760px;
+    }
+    h1 span { color: #858993; }
+    .hero-copy { font-size: 17px; color: #b8bac1; max-width: 520px; line-height: 1.6; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+    .hero-note { margin-top: 36px; color: #858892; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+
+    /* Hero Orbit Graphics */
+    .hero-art { position: relative; min-height: 380px; display: grid; place-items: center; }
+    .orbit {
+      width: min(100%, 380px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      animation: spin 40s linear infinite;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    .orbit::before, .orbit::after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; }
+    .orbit::before { inset: 12%; }
+    .orbit::after { inset: 25%; }
+    .orbit-core {
+      position: relative;
+      z-index: 1;
+      width: 47%;
+      aspect-ratio: 1;
+      background: linear-gradient(145deg, #242936, #0c0d11 70%);
+      border: 1px solid #424753;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 20px 80px rgba(65, 105, 255, 0.2);
+      border-radius: 50%;
+      animation: counter-spin 40s linear infinite;
+    }
+    @keyframes counter-spin { 100% { transform: rotate(-360deg); } }
+    .orbit-core strong { font: clamp(40px, 5vw, 64px)/1 Georgia, serif; letter-spacing: -.08em; }
+    .orbit-label {
+      position: absolute;
+      background: #101217;
+      border: 1px solid #30333b;
+      padding: 8px 12px;
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #d7d8dd;
+      font-weight: 700;
+      white-space: nowrap;
+      animation: counter-spin 40s linear infinite;
+    }
+    .orbit-label.one { top: 10%; right: -2%; }
+    .orbit-label.two { bottom: 15%; left: -3%; }
+    .orbit-label.three { bottom: 2%; right: 12%; color: #aab7ff; border-color: rgba(65,105,255,0.4); }
+
+    /* Ticker */
+    .ticker { border-block: 1px solid var(--line); background: rgba(255,255,255,0.01); }
+    .ticker-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 18px 0; color: #c7c8ce; font-size: 10px; letter-spacing: .17em; text-transform: uppercase; font-weight: 700; }
+    .ticker span { display: flex; align-items: center; gap: 10px; }
+    .ticker b { color: #738cff; font-size: 14px; }
+
+    /* Generic Sections */
+    section { padding: 90px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 25px; margin-bottom: 42px; }
+    .kicker { color: #9baeff; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 800; }
+    h2 { font-size: clamp(32px, 4.5vw, 54px); letter-spacing: -.04em; line-height: 1.05; margin: 10px 0 0; font-weight: 800; }
+    .section-desc { color: var(--muted); max-width: 380px; font-size: 14px; }
+
+    /* Services Grid - 3 Columns */
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service {
+      min-height: 290px;
+      padding: 32px 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      transition: background .25s ease, transform .25s ease;
+      background: var(--bg);
+    }
+    .service:hover { background: var(--panel-hover); }
+    .service-num { font-size: 11px; color: #8f929c; letter-spacing: .1em; font-weight: 700; }
+    .service-icon { width: 44px; height: 44px; border: 1px solid #373b46; display: grid; place-items: center; margin: 30px 0 20px; color: #aab7ff; font-size: 18px; background: rgba(255,255,255,0.02); }
+    .service h3 { font-size: 19px; line-height: 1.25; letter-spacing: -.02em; margin: 0 0 12px; font-weight: 700; }
+    .service p { color: var(--muted); font-size: 13.5px; margin: 0 0 24px; line-height: 1.55; }
+    .service a { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-top: auto; color: #cbd4ff; transition: color .2s; }
+    .service a:hover { color: #fff; }
+
+    /* Band / About Section */
+    .band { background: #f0f0ec; color: #0b0c0f; padding: 80px 0; }
+    .band-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .band h2 { color: #0b0c0f; max-width: 620px; }
+    .band p { color: #53565e; max-width: 500px; font-size: 15px; margin-bottom: 20px; }
+    .band .btn { border-color: #0b0c0f; color: #0b0c0f; }
+    .band .btn:hover { background: #0b0c0f; color: #fff; }
+
+    /* Process Steps */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 40px; }
+    .step { background: var(--bg); padding: 32px 28px; min-height: 200px; transition: background .2s; }
+    .step:hover { background: var(--panel); }
+    .step .n { color: #9baeff; font-size: 11px; letter-spacing: .14em; font-weight: 800; }
+    .step h3 { font-size: 20px; margin: 20px 0 10px; letter-spacing: -.02em; font-weight: 700; }
+    .step p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.55; }
+
+    /* Contact Section */
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+    .contact-info h2 { margin-bottom: 20px; }
+    .contact-info p { color: var(--muted); font-size: 14px; max-width: 400px; }
+    .contact-method { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .contact-method small { display: block; color: #858892; text-transform: uppercase; letter-spacing: .13em; font-size: 10px; margin-bottom: 6px; font-weight: 700; }
+    .contact-method a { font-size: 16px; font-weight: 700; overflow-wrap: anywhere; color: #fff; }
+    .contact-method a:hover { text-decoration: underline; color: #9baeff; }
+
+    form { border: 1px solid var(--line); padding: 32px; background: #0d0f13; border-radius: var(--radius); }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-size: 11px; color: #c5c7ce; margin-bottom: 8px; letter-spacing: .05em; font-weight: 700; }
+    input, select, textarea {
+      width: 100%;
+      background: #11141a;
+      border: 1px solid #30333c;
+      color: #f5f5f2;
+      padding: 14px;
+      outline: none;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      transition: border-color .2s;
+    }
+    input:focus, select:focus, textarea:focus { border-color: #7d93ff; box-shadow: 0 0 0 1px #7d93ff; }
+    textarea { min-height: 120px; resize: vertical; }
+    .form-hint { font-size: 11px; color: #898c96; margin: 14px 0 0; line-height: 1.4; }
+    .form-status { display: none; margin-top: 16px; padding: 12px; border-radius: var(--radius); background: rgba(65, 105, 255, 0.1); border: 1px solid var(--blue); color: #d0d8ff; font-size: 13px; }
+
+    /* Configuration Banner */
+    .config-banner {
+      background: #151922;
+      border-bottom: 1px solid #303545;
+      padding: 10px 0;
+      font-size: 12px;
+      color: #b0b4c0;
+    }
+    .config-banner-inner { display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .config-banner input { margin: 0; padding: 6px 10px; font-size: 12px; width: 180px; }
+
+    /* FAQ */
+    .faq { border-top: 1px solid var(--line); margin-top: 30px; }
+    details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+    summary { cursor: pointer; font-size: 16px; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 20px; user-select: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: #9baeff; font-size: 20px; font-weight: 400; line-height: 1; }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--muted); font-size: 14px; max-width: 760px; margin: 12px 0 0; line-height: 1.6; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); padding: 32px 0 40px; background: #07080a; }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-note { color: #8b8e97; font-size: 11px; margin-top: 24px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-weight: 600; }
+    .smallcaps { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; font-weight: 700; color: #aab7ff; }
+
+    /* Floating WhatsApp Button */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 15;
+      background: var(--white);
+      color: #090a0c;
+      border: 0;
+      padding: 14px 20px;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 50px;
+      transition: transform .2s, background .2s;
+    }
+    .wa-float:hover { background: #dfe4ff; transform: translateY(-2px); }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .navlinks { gap: 16px; }
+      .hero { grid-template-columns: 1fr; gap: 40px; text-align: left; }
+      .services { grid-template-columns: 1fr; border-left: none; }
+      .service { border-left: 1px solid var(--line); min-height: auto; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      .nav { height: 66px; }
+      .navlinks { display: none; }
+      .brand { font-size: 11px; }
+      .nav-cta { padding: 9px 14px; font-size: 11px; }
+      .hero { padding-block: 50px 40px; }
+      .hero-art { min-height: 260px; margin-top: 10px; }
+      .orbit { width: 260px; }
+      h1 { font-size: clamp(40px, 13vw, 64px); }
+      .hero-copy { font-size: 15px; }
+      .ticker-inner { justify-content: flex-start; gap: 18px; }
+      section { padding: 60px 0; }
+      .section-head { display: block; }
+      .section-desc { margin-top: 14px; }
+      .band { padding: 50px 0; }
+      .band-inner { grid-template-columns: 1fr; gap: 24px; }
+      .steps { grid-template-columns: 1fr; }
+      .field-row { grid-template-columns: 1fr; gap: 0; }
+      form { padding: 20px; }
+      .wa-float { right: 16px; bottom: 16px; padding: 12px 18px; }
+      .footer-note { flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, .orbit, .orbit-core, .orbit-label { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Live Configuration Toolbar for Testing -->
+  <div class="config-banner" id="configBanner">
+    <div class="wrap config-banner-inner">
+      <span><strong>WhatsApp Setup:</strong> Enter your number (with country code, no + or spaces) to test instant messaging:</span>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <input type="text" id="configPhoneInput" value="923144330830" placeholder="e.g. 923001234567">
+        <button class="btn btn-blue" id="saveConfigBtn" style="padding:6px 12px; font-size:11px;">Update</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="topline"></div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Baqir Ali Abbasi home">
+        <span class="monogram">BAA</span>
+        <span>BAQIR ALI ABBASI<br><span style="color:#8e929d;font-size:9px;font-weight:500;letter-spacing:.2em">CAREER & SCHOLARSHIP ADVISORY</span></span>
+      </a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="nav-cta" href="#contact">LET'S TALK ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Your next chapter starts here</div>
+        <h1>MAKE YOUR<br><span>NEXT MOVE.</span></h1>
+        <p class="hero-copy">Professional CVs, persuasive motivation letters, scholarship application guidance, and polished academic documentation to help you move forward with confidence.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#services">EXPLORE SERVICES ↘</a>
+          <a class="btn btn-blue" href="#contact">CONTACT BAQIR ↗</a>
+        </div>
+        <div class="hero-note">Personal service · Clear process · Your goals first</div>
+      </div>
+      <div class="hero-art" aria-label="BAA Monogram Graphic">
+        <div class="orbit">
+          <span class="orbit-label one">CV & CAREER</span>
+          <span class="orbit-label two">SCHOLARSHIP SUPPORT</span>
+          <span class="orbit-label three">ACADEMIC DOCUMENTS</span>
+          <div class="orbit-core"><strong>BAA</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="ticker">
+      <div class="wrap ticker-inner">
+        <span><b>✳</b> CAREER-READY PROFILES</span>
+        <span><b>✳</b> SCHOLARSHIP SUPPORT</span>
+        <span><b>✳</b> COVER LETTERS & SOPS</span>
+        <span><b>✳</b> DOCUMENT FORMATTING</span>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">01 / What I do</div>
+            <h2>Core offerings.<br>Real progress.</h2>
+          </div>
+          <p class="section-desc">Practical, high-standard document preparation and application guidance for students, job seekers, and prospective scholarship applicants.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="service-num">01 — CAREER</div>
+            <div class="service-icon">▤</div>
+            <h3>CV & Professional Profile</h3>
+            <p>Clean, modern CVs, tailored cover letters, and LinkedIn profile optimization designed to highlight your strengths effectively.</p>
+            <a href="#contact" data-service="CV & Professional Profile">LET'S BUILD YOUR CV ↗</a>
+          </article>
+
+          <article class="service">
+            <div class="service-num">02 — EDUCATION</div>
+            <div class="service-icon">✳</div>
+            <h3>Scholarship Application Support</h3>
+            <p>Guidance on Statements of Purpose (SOPs), motivation letters, eligibility criteria, and navigating portal submissions.</p>
+            <a href="#contact" data-service="Scholarship Application Support">PLAN YOUR APPLICATION ↗</a>
+          </article>
+
+          <article class="service">
+            <div class="service-num">03 — ACADEMIC</div>
+            <div class="service-icon">◫</div>
+            <h3>Student & Document Support</h3>
+            <p>Academic document formatting, application proofreading, checklist validation, and student-focused submission assistance.</p>
+            <a href="#contact" data-service="Student & Document Support">GET DOCUMENT HELP ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Band -->
+    <div class="band" id="about">
+      <div class="wrap band-inner">
+        <div>
+          <div class="kicker" style="color:#304fe2">02 / The approach</div>
+          <h2>Less confusion.<br>More forward motion.</h2>
+        </div>
+        <div>
+          <p>I'm Baqir Ali Abbasi. I specialize in helping individuals prepare impactful career documents, navigate university and scholarship application processes, and present their achievements with clarity.</p>
+          <p>Every project starts with understanding your specific goal, reviewing requirements carefully, and agreeing on deliverables before starting.</p>
+          <a class="btn" href="#contact">TELL ME YOUR GOAL ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">03 / The process</div>
+            <h2>Simple by design.</h2>
+          </div>
+          <p class="section-desc">No complicated steps. Just a clear conversation and an agreed plan.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="n">STEP 01 / CONNECT</div>
+            <h3>Tell me what you need</h3>
+            <p>Share your goal, target deadline, and any draft documents or application guidelines you already have.</p>
+          </article>
+          <article class="step">
+            <div class="n">STEP 02 / PLAN</div>
+            <h3>Agree on the scope</h3>
+            <p>We'll clarify exact deliverables, timelines, pricing, and key background details needed from you.</p>
+          </article>
+          <article class="step">
+            <div class="n">STEP 03 / MOVE</div>
+            <h3>Work towards the goal</h3>
+            <p>Receive structured advisory or edited drafts, review them carefully, and finalize your submission.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background:#0c0e12;border-block:1px solid var(--line)">
+      <div class="wrap contact-grid">
+        <div class="contact-info">
+          <div class="kicker">04 / Start a conversation</div>
+          <h2>What's your<br>next move?</h2>
+          <p>Send a message outlining the service you need. Your details are used strictly to reply to your inquiry.</p>
+          
+          <div class="contact-method">
+            <small>Direct WhatsApp</small>
+            <a id="whatsappText" href="#contact">Loading contact info...</a>
+          </div>
+          
+          <div class="contact-method">
+            <small>Service area</small>
+            <div>Online advisory · Pakistan and international applicants</div>
+          </div>
+          
+          <div class="contact-method">
+            <small>Turnaround & Timing</small>
+            <div>Share your exact deadline if your request is time-sensitive.</div>
+          </div>
+        </div>
+
+        <form id="contactForm" aria-label="Contact Form">
+          <div class="field-row">
+            <div>
+              <label for="name">YOUR NAME *</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Full name" required>
+            </div>
+            <div>
+              <label for="contactWay">HOW SHOULD I REACH YOU? *</label>
+              <input id="contactWay" name="contactWay" placeholder="WhatsApp number or email" required>
+            </div>
+          </div>
+          
+          <label for="service">WHAT DO YOU NEED? *</label>
+          <select id="service" name="service" required>
+            <option value="">Choose a service</option>
+            <option>CV & Professional Profile</option>
+            <option>Scholarship Application Support</option>
+            <option>Student & Document Support</option>
+            <option>Something else</option>
+          </select>
+          
+          <label for="message">A FEW DETAILS</label>
+          <textarea id="message" name="message" placeholder="Tell me your target program/job, deadline, and specific support needed..."></textarea>
+          
+          <button class="btn btn-blue" type="submit" style="width:100%">PREPARE WHATSAPP MESSAGE ↗</button>
+          <p class="form-hint">This form prepares a WhatsApp message. You will have a chance to review it before clicking send.</p>
+          <div class="form-status" id="formStatus" role="status"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+      <div class="wrap">
+        <div class="kicker">05 / A few important details</div>
+        <h2>Clear from the start.</h2>
+        <div class="faq">
+          <details>
+            <summary>Can you guarantee a scholarship or job placement?</summary>
+            <p>No. I provide professional document preparation, advisory, and optimization. Admission, scholarship award, and hiring decisions rest solely with the respective committees and organizations.</p>
+          </details>
+          <details>
+            <summary>Are you affiliated with official scholarship bodies?</summary>
+            <p>This is an independent personal advisory service and is not affiliated with any university, government institution, or official scholarship board.</p>
+          </details>
+          <details>
+            <summary>How do we get started?</summary>
+            <p>Fill out the contact form above or reach out directly on WhatsApp with your draft or program link and deadline so we can plan the required steps.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="#home">
+          <span class="monogram">BAA</span>
+          <span>BAQIR ALI ABBASI<br><span style="color:#8e929d;font-size:9px;font-weight:500;letter-spacing:.2em">CAREER & SCHOLARSHIP ADVISORY</span></span>
+        </a>
+        <a class="smallcaps" href="#contact">Ready to apply? Let's talk ↗</a>
+      </div>
+      <div class="footer-note">
+        <span>© <span id="year"></span> BAQIR ALI ABBASI. ALL RIGHTS RESERVED.</span>
+        <span>INDEPENDENT ADVISORY SERVICE · NO OUTCOME GUARANTEES</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="floatWhatsApp" href="#contact" aria-label="Contact on WhatsApp">WHATSAPP ↗</a>
+
+  <script>
+    let WHATSAPP_NUMBER = "923144330830";
+
+    const waText = document.getElementById("whatsappText");
+    const floatWa = document.getElementById("floatWhatsApp");
+    const configInput = document.getElementById("configPhoneInput");
+    const saveConfigBtn = document.getElementById("saveConfigBtn");
+
+    function updateWhatsAppLinks(number) {
+      const cleanNum = number.replace(/[^\d]/g, "");
+      const isValid = /^\d{10,15}$/.test(cleanNum);
+
+      if (isValid) {
+        WHATSAPP_NUMBER = cleanNum;
+        waText.textContent = "+" + WHATSAPP_NUMBER;
+        waText.href = "https://wa.me/" + WHATSAPP_NUMBER;
+        floatWa.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Assalam-o-Alaikum Baqir, I'd like to ask about your services.");
+      } else {
+        waText.textContent = "Please configure a valid WhatsApp number";
+        waText.href = "#contact";
+        floatWa.href = "#contact";
+      }
+    }
+
+    // Initialize links
+    updateWhatsAppLinks(WHATSAPP_NUMBER);
+
+    // Live config banner handler
+    saveConfigBtn.addEventListener("click", () => {
+      updateWhatsAppLinks(configInput.value);
+      alert("WhatsApp contact number updated to: +" + WHATSAPP_NUMBER);
+    });
+
+    // Auto update copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Auto-select dropdown service when clicking CTA buttons
+    document.querySelectorAll("[data-service]").forEach(link => {
+      link.addEventListener("click", () => {
+        const service = link.getAttribute("data-service");
+        const selectElem = document.getElementById("service");
+        selectElem.value = service;
+      });
+    });
+
+    // Form submit -> WhatsApp pre-filled message generator
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById("name").value.trim();
+      const contactWay = document.getElementById("contactWay").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+      const status = document.getElementById("formStatus");
+
+      if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
+        status.style.display = "block";
+        status.textContent = "Please enter a valid WhatsApp phone number in the top configuration bar before submitting.";
+        return;
+      }
+
+      const formattedText = `Assalam-o-Alaikum Baqir Ali Abbasi!\n\n` +
+        `• Name: ${name}\n` +
+        `• Reach me at: ${contactWay}\n` +
+        `• Service Requested: ${service}\n` +
+        `• Details: ${message || "I would like to discuss working together."}`;
+
+      const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(formattedText);
+      
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+
+      status.style.display = "block";
+      status.textContent = "Opening WhatsApp... Review your message and press Send when ready.";
+    });
+  </script>
+</body>
+</html>
